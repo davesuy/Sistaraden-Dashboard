@@ -43,8 +43,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.market-automation') }}">MA / Engagement
-                                        platform</a>
+                                    <a class="nav-link" href="{{ route('admin.market-automation') }}">MA / Engagement Platform</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('admin.statistics') }}">Statistics</a>
@@ -82,10 +81,10 @@
                         <li class="nav-item">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="workshops.html">Workshops</a>
+                                    <a class="nav-link" href="#">Workshops</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="education.html">Education modules</a>
+                                    <a class="nav-link" href="#">Education modules</a>
                                 </li>
                             </ul>
                         </li>
