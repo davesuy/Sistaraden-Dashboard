@@ -1,11 +1,31 @@
-<footer class="app-footer">
-    <div>
-        <strong>@lang('labels.general.copyright') &copy; {{ date('Y') }}
-            <a href="http://laravel-boilerplate.com">
-                @lang('strings.backend.general.boilerplate_link')
-            </a>
-        </strong> @lang('strings.backend.general.all_rights_reserved')
-    </div>
+<!-- Footer -->
+<div class="hk-footer-wrap container">
+    <footer class="footer">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <p>Produced by<a href="https://sistaraden.se" class="text-dark" target="_blank">Sista Raden
+                        AB</a> © <script type="text/javascript">
+                        var today = new Date()
+                        var year = today.getFullYear()
+                        document.write(year)
+                    </script>
+                </p>
+            </div>
 
-    <div class="ml-auto">Theme by <a href="http://coreui.io">CoreUI</a></div>
-</footer>
+            <!-- SOCIAL MEDIA LINKS -->
+            <!-- <div class="col-md-6 col-sm-12">
+                <p class="d-inline-block">Follow us</p>
+                <a href="#"
+                    class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span
+                        class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>
+                <a href="#"
+                    class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span
+                        class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
+                <a href="#"
+                    class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span
+                        class="btn-icon-wrap"><i class="fa fa-google-plus"></i></span></a>
+            </div> -->
+        </div>
+    </footer>
+</div>
+<!-- /Footer -->

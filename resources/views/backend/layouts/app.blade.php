@@ -21,41 +21,63 @@
     {{ style(mix('css/backend.css')) }}
 
     @stack('after-styles')
+
+    <link href="{{ asset('css/vendors/vectormap/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/vendors/jquery-toggles/css/toggles.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/vendors/jquery-toggles/css/themes/toggles-light.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/vendors/jquery-toast-plugin/dist/jquery.toast.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/vendors/owl.carousel/dist/assets/owl.carousel.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/vendors/owl.carousel/dist/assets/owl.theme.default.min.css') }}" rel="stylesheet" type="text/css">
 </head>
 
 <body class="{{ config('backend.body_classes') }}">
-    @include('backend.includes.header')
-
-    <div class="app-body">
+    <div class="hk-wrapper hk-vertical-nav">
+        @include('backend.includes.header')
         @include('backend.includes.sidebar')
 
-        <main class="main">
-            @include('includes.partials.demo')
-            @include('includes.partials.logged-in-as')
-            {!! Breadcrumbs::render() !!}
-
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper px-0">
+            <!-- Container -->
             <div class="container-fluid">
-                <div class="animated fadeIn">
-                    <div class="content-header">
-                        @yield('page-header')
-                    </div><!--content-header-->
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        @if (trim($__env->yieldContent('page-header')))
+                            <div class="faq-search-wrap">
+                                <div class="container">
+                                    <h2 class="display-5 text-dark">@yield('page-header')</h2>
+                                    @if (trim($__env->yieldContent('sub-header')))
+                                        <p>@yield('sub-header')</p>
+                                    @endif
+                                </div>
+                            </div>
+                        @endif
 
-                    @include('includes.partials.messages')
-                    @yield('content')
-                </div><!--animated-->
-            </div><!--container-fluid-->
-        </main><!--main-->
+                        <section class="hk-sec-wrapper">
+                            @yield('content')
+                        </section>
+                    </div>
 
-        @include('backend.includes.aside')
-    </div><!--app-body-->
 
-    @include('backend.includes.footer')
+                </div>
+                <!-- /Row -->
+            </div>
+            <!-- /Container -->
 
-    <!-- Scripts -->
-    @stack('before-scripts')
-    {!! script(mix('js/manifest.js')) !!}
-    {!! script(mix('js/vendor.js')) !!}
-    {!! script(mix('js/backend.js')) !!}
-    @stack('after-scripts')
+            @include('backend.includes.footer')
+        </div>
+        <!-- /Main Content -->
+
+        <!-- Scripts -->
+        @stack('before-scripts')
+        {!! script(mix('js/manifest.js')) !!}
+        {!! script(mix('js/vendor.js')) !!}
+        {!! script(mix('js/backend.js')) !!}
+        @stack('after-scripts')
+
+        @include('backend.includes.pinkman')
+    </div>
+    <!-- /HK Wrapper -->
 </body>
 </html>
