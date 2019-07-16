@@ -1,7 +1,7 @@
 <?php
 
 Breadcrumbs::for('admin.auth.role.index', function ($trail) {
-    $trail->parent('admin.dashboard');
+    $trail->parent('admin.index');
     $trail->push(__('menus.backend.access.roles.management'), route('admin.auth.role.index'));
 });
 

@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-    <a href="{{ route('frontend.index') }}" class="navbar-brand">{{ app_name() }}</a>
+    <a href="{{ route('frontend.index') }}" class="navbar-brand">
+        <img class="brand-img d-inline-block" src="{{ asset('img/frontend/brand/LOGO-dark-768x274.png') }}" style="width:100px;" alt="brand" />
+    </a>
 
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="@lang('labels.general.toggle_navigation')">
         <span class="navbar-toggler-icon"></span>
@@ -33,7 +35,7 @@
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuUser">
                         @can('view backend')
-                            <a href="{{ route('admin.dashboard') }}" class="dropdown-item">@lang('navs.frontend.user.administration')</a>
+                            <a href="{{ route('admin.index') }}" class="dropdown-item">@lang('navs.frontend.user.administration')</a>
                         @endcan
 
                         <a href="{{ route('frontend.user.account') }}" class="dropdown-item {{ active_class(Active::checkRoute('frontend.user.account')) }}">@lang('navs.frontend.user.account')</a>

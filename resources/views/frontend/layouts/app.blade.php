@@ -21,6 +21,8 @@
         {{ style(mix('css/frontend.css')) }}
 
         @stack('after-styles')
+
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
         @include('includes.partials.demo')
@@ -29,7 +31,7 @@
             @include('includes.partials.logged-in-as')
             @include('frontend.includes.nav')
 
-            <div class="container">
+            <div class="hk-wrapper">
                 @include('includes.partials.messages')
                 @yield('content')
             </div><!-- container -->
@@ -43,5 +45,6 @@
         @stack('after-scripts')
 
         @include('includes.partials.ga')
+        @include('frontend.includes.pinkman')
     </body>
 </html>

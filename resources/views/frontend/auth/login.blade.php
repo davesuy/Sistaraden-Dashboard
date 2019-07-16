@@ -1,11 +1,76 @@
-@extends('frontend.layouts.app')
+<!DOCTYPE html>
+@langrtl
+    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="rtl">
+@else
+    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@endlangrtl
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>@yield('title', app_name())</title>
+        <meta name="description" content="@yield('meta_description', 'Laravel 5 Boilerplate')">
+        <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
+        @yield('meta')
 
-@section('title', app_name() . ' | ' . __('labels.frontend.auth.login_box_title'))
+        {{-- See https://laravel.com/docs/5.5/blade#stacks for usage --}}
+        @stack('before-styles')
 
-@section('content')
-    <div class="row justify-content-center align-items-center">
-        <div class="col col-sm-8 align-self-center">
-            <div class="card">
+        <!-- Check if the language is set to RTL, so apply the RTL layouts -->
+        <!-- Otherwise apply the normal LTR layouts -->
+        {{ style(mix('css/frontend.css')) }}
+
+        @stack('after-styles')
+
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/vendors/owl.carousel/dist/assets/owl.carousel.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/vendors/owl.carousel/dist/assets/owl.theme.default.min.css') }}" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        @include('includes.partials.demo')
+
+        <div id="app">
+            <div class="hk-wrapper">
+                @include('includes.partials.messages')
+                <!-- Main Content -->
+        <div class="hk-pg-wrapper hk-auth-wrapper">
+            <header class="d-flex justify-content-between align-items-center">
+                <a href="{{ route('frontend.index') }}" class="navbar-brand">
+                    <img class="brand-img d-inline-block" src="{{ asset('img/frontend/brand/LOGO-dark-768x274.png') }}" style="width:100px;" alt="brand" />
+                </a>
+                <div class="btn-group btn-group-sm">
+                    <a href="#" class="btn btn-outline-secondary">Help</a>
+                    <a href="#" class="btn btn-outline-secondary">About Us</a>
+                </div>
+            </header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-5 pa-0">
+                        <div id="owl_demo_1" class="owl-carousel dots-on-item owl-theme">
+                            <div class="fadeOut item auth-cover-img overlay-wrap" style="background-image:url({{ asset('img/backend/pinkman/bg2.jpg') }});">
+                                <div class="auth-cover-info py-xl-0 pt-100 pb-50">
+                                    <div class="auth-cover-content text-center w-xxl-75 w-sm-90 w-xs-100">
+                                        <h1 class="display-3 text-white mb-20">Understand and look deep into nature.</h1>
+                                        <p class="text-white">The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. Again during the 90s as desktop publishers bundled the text with their software.</p>
+                                    </div>
+                                </div>
+                                <div class="bg-overlay bg-trans-dark-50"></div>
+                            </div>
+                            <div class="fadeOut item auth-cover-img overlay-wrap" style="background-image:url({{ asset('img/backend/pinkman/bg1.jpg') }});">
+                                <div class="auth-cover-info py-xl-0 pt-100 pb-50">
+                                    <div class="auth-cover-content text-center w-xxl-75 w-sm-90 w-xs-100">
+                                        <h1 class="display-3 text-white mb-20">Experience matters for good applications.</h1>
+                                        <p class="text-white">The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.</p>
+                                    </div>
+                                </div>
+                                <div class="bg-overlay bg-trans-dark-50"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 pa-0">
+                        <div class="auth-form-wrap py-xl-0 py-50">
+                            <div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-xs-100">
+                                <div class="card">
                 <div class="card-header">
                     <strong>
                         @lang('labels.frontend.auth.login_box_title')
@@ -77,6 +142,24 @@
                     </div><!--row-->
                 </div><!--card body-->
             </div><!--card-->
-        </div><!-- col-md-8 -->
-    </div><!-- row -->
-@endsection
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Main Content -->
+            </div><!-- container -->
+        </div><!-- #app -->
+
+        <!-- Scripts -->
+        @stack('before-scripts')
+        {!! script(mix('js/manifest.js')) !!}
+        {!! script(mix('js/vendor.js')) !!}
+        {!! script(mix('js/frontend.js')) !!}
+        @stack('after-scripts')
+
+        @include('includes.partials.ga')
+        @include('frontend.includes.pinkman')
+    </body>
+</html>
