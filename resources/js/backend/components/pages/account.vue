@@ -69,38 +69,39 @@
 
                 let vm = this;
 
-                // fetch(this.sharpspringConnect, {
-                //     method: 'post',
-                //     headers: {
-                //         'content-type': 'application/json'
-                //     },
-                //     body: JSON.stringify({"method":"getAccounts","params":{"where":[],"limit":100,"offset":0},"id":5})
-                // })
-                // .then(res => res.json())
-                // .then(data => {
-
-                //     this.accounts = data.result.account;
-                //     this.total = data.result.account.length;
-                //     //console.log(data.result.account);
-                // })
-                // .catch(err => console.log(err))
-
-                axios({
-                    method: "post",
-                    url: this.sharpspringConnect,
+                fetch(this.sharpspringConnect, {
+                    method: 'post',
                     headers: {
-                         'content-type': 'application/json'
+                        'content-type': 'application/json'
                     },
-                    data: {"method":"getAccounts","params":{"where":[],"limit":100,"offset":0},"id":5}
+                    body: JSON.stringify({"method":"getAccounts","params":{"where":[],"limit":100,"offset":0},"id":5})
                 })
-                .then(response => {
-                    this.accounts = response.data.result.account;
+                .then(res => res.json())
+                .then(data => {
 
-                    console.log(response.data.result.account);
+                    this.accounts = data.result.account;
+                    this.total = data.result.account.length;
+                    //console.log(data.result.account);
                 })
-                .catch(response => {
-                    console.log(response);
-                });
+                .catch(err => console.log(err))
+
+                // axios({
+                //     method: "post",
+                //     url: this.sharpspringConnect,
+                //     headers: {
+                //         //'Access-Control-Allow-Origin': 'http://dashboard.sistaraden.com/',
+                //         'Content-Type': 'application/json'
+                //     },
+                //     data: {"method":"getAccounts","params":{"where":[],"limit":100,"offset":0},"id":5}
+                // })
+                // .then(response => {
+                //     this.accounts = response.data.result.account;
+
+                //     console.log(response.data.result.account);
+                // })
+                // .catch(response => {
+                //     console.log(response);
+                // });
             },
             setPages () {
 
