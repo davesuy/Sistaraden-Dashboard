@@ -15,7 +15,7 @@
                         <li class="nav-item">
                             <ul class="nav flex-column">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="{{ route('admin.dashboard') }}">Welcome</a>
+                                    <a class="nav-link" href="{{ route('admin.index') }}">Welcome</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link collapsed" href="javascript:void(0);"

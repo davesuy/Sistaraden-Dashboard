@@ -2,9 +2,9 @@
 <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
     <a id="navbar_toggle_btn" class="navbar-toggle-btn nav-link-hover" href="javascript:void(0);"><i
             class="ion ion-ios-menu"></i></a>
-    <a class="navbar-brand" href="dashboard1.html">
+    <a class="navbar-brand" href="{{ route('admin.index') }}">
         <img class="brand-img d-inline-block"
-            src="https://sistaraden.se/wp-content/uploads/2019/05/LOGO-dark-768x274.png" style="width:100px;"
+            src="{{ asset('img/backend/brand/LOGO-dark-768x274.png') }}" style="width:100px;"
             alt="brand" />
     </a>
     <ul class="navbar-nav hk-navbar-content">

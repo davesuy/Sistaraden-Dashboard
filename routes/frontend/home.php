@@ -21,6 +21,8 @@ Route::post('contact/send', [ContactController::class, 'send'])->name('contact.s
  */
 Route::group(['middleware' => ['auth', 'password_expires']], function () {
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
+        Route::redirect('/', '/dashboard', 301);
+
         // User Dashboard Specific
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

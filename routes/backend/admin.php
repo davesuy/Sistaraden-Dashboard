@@ -8,8 +8,7 @@ use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\DocumentationController;
 
 // All route names are prefixed with 'admin.'.
-Route::redirect('/', '/admin/dashboard', 301);
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/', [DashboardController::class, 'index'])->name('index');
 Route::get('market-automation', [MarketAutomationController::class, 'index'])->name('market-automation');
 Route::get('statistics', [StatisticsController::class, 'index'])->name('statistics');
 Route::get('create-ticket', [TicketController::class, 'index'])->name('create-ticket');
