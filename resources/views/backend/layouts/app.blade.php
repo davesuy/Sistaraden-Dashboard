@@ -54,7 +54,9 @@
                             </div>
                         @endif
 
-                        <section class="hk-sec-wrapper">
+                        <section id="app-backend" class="hk-sec-wrapper">
+                            <app-backend></app-backend>
+                         
                             @yield('content')
                         </section>
                     </div>

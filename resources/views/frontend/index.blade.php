@@ -12,13 +12,19 @@
                 <div class="card-body">
                     @lang('strings.frontend.welcome_to', ['place' => app_name()])
                 </div>
+
+
+                 
+                  <Articles />
+                    
+              
             </div><!--card-->
         </div><!--col-->
     </div><!--row-->
 
     <div class="row mb-4">
         <div class="col">
-            <example-component></example-component>
+           <button-sample type="submit" test="sffd" />
         </div><!--col-->
     </div><!--row-->
 
