@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\StatisticsController;
 use App\Http\Controllers\Backend\TicketController;
 use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\DocumentationController;
+use App\Http\Controllers\Backend\Crm\AccountController;
 
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
@@ -16,3 +17,9 @@ Route::get('create-ticket', [TicketController::class, 'index'])->name('create-ti
 Route::get('faq', [FaqController::class, 'index'])->name('faq');
 Route::get('faq-privacy', [FaqController::class, 'privacy'])->name('faq-privacy');
 Route::get('documentation', [DocumentationController::class, 'index'])->name('documentation');
+
+// CRM
+
+Route::group(['namespace' => 'Crm', 'prefix' => 'crm', 'as' => 'crm.', 'middleware' => 'admin'], function () {
+	Route::get('account', [AccountController::class, 'index'])->name('account');
+});

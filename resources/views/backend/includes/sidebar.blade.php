@@ -55,6 +55,49 @@
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:void(0);" data-toggle="collapse"
                         data-target="#auth_drp">
+                        <i class="fas fa-users-cog"></i>
+                        <span class="nav-link-text">CRM</span>
+                    </a>
+                    <ul id="auth_drp" class="nav flex-column collapse collapse-level-1">
+                        <li class="nav-item">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.crm.account') }}">Account</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">Active List Member</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">Campaign</a>
+                                </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">Client</a>
+                                </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">Email</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">Email Listing</a>
+                                </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">Event</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">Lead</a>
+                                </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">List</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">List Member</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-toggle="collapse"
+                        data-target="#auth_drp">
                         <i class="ion ion-ios-construct"></i>
                         <span class="nav-link-text">Support</span>
                     </a>
