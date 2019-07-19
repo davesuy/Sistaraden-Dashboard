@@ -32,3 +32,9 @@ Route::get('campaigns', 'Backend\Crm\CampaignController@getCampaigns');
 Route::get('clients', 'Backend\Crm\ClientController@getClients');
 
 Route::get('emails', 'Backend\Crm\EmailController@getEmails');
+
+Route::get('events', 'Backend\Crm\EventController@getEvents');
+
+Route::get('leads', 'Backend\Crm\LeadController@getLeads');
+
+Route::get('lists', 'Backend\Crm\ListController@getLists');

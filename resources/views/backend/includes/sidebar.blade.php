@@ -77,17 +77,15 @@
                                     <a class="nav-link" href="{{ route('admin.crm.emails') }}">Email Listings</a>
                                 </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">Events</a>
+                                    <a class="nav-link" href="{{ route('admin.crm.events') }}">Events</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">Leads</a>
+                                    <a class="nav-link" href="{{ route('admin.crm.leads') }}">Leads</a>
                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">Lists</a>
-                                </li>
+                            {{-- 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">List Members</a>
-                                </li>
+                                    <a class="nav-link" href="{{ route('dmin.crm.lists') }}">List Members</a>
+                                </li> --}}
                             </ul>
                         </li>
                     </ul>

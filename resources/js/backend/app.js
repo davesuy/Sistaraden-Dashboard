@@ -23,6 +23,8 @@ Vue.component('active-lists', require('./components/pages/activeLists.vue').defa
 Vue.component('campaign', require('./components/pages/campaign.vue').default);
 Vue.component('client', require('./components/pages/client.vue').default);
 Vue.component('email', require('./components/pages/email.vue').default);
+Vue.component('event', require('./components/pages/event.vue').default);
+Vue.component('lead', require('./components/pages/lead.vue').default);
 
 // Vue.component('navbar', require('./components/NavBar.vue'));
 

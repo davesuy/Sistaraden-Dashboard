@@ -11,6 +11,9 @@ use App\Http\Controllers\Backend\Crm\ActiveListController;
 use App\Http\Controllers\Backend\Crm\CampaignController;
 use App\Http\Controllers\Backend\Crm\ClientController;
 use App\Http\Controllers\Backend\Crm\EmailController;
+use App\Http\Controllers\Backend\Crm\EventController;
+use App\Http\Controllers\Backend\Crm\LeadController;
+use App\Http\Controllers\Backend\Crm\ListsController;
 
 // All route names are prefixed with 'admin.'.
 Route::get('/', [DashboardController::class, 'index'])->name('index');
@@ -30,6 +33,9 @@ Route::group(['namespace' => 'Crm', 'prefix' => 'crm', 'as' => 'crm.', 'middlewa
 	Route::get('campaigns', [CampaignController::class, 'index'])->name('campaigns');
 	Route::get('clients', [ClientController::class, 'index'])->name('clients');
 	Route::get('emails', [EmailController::class, 'index'])->name('emails');
+	Route::get('events', [EventController::class, 'index'])->name('events');
+	Route::get('leads', [LeadController::class, 'index'])->name('leads');
+	Route::get('lists', [ListsController::class, 'index'])->name('lists');
 
 
 });
