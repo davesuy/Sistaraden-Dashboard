@@ -17,9 +17,12 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('app-backend', require('./components/AppBackend.vue').default);
+Vue.component('app-backend', require('./components/appBackend.vue').default);
 Vue.component('account', require('./components/pages/account.vue').default);
-
+Vue.component('active-lists', require('./components/pages/activeLists.vue').default);
+Vue.component('campaign', require('./components/pages/campaign.vue').default);
+Vue.component('client', require('./components/pages/client.vue').default);
+Vue.component('email', require('./components/pages/email.vue').default);
 
 // Vue.component('navbar', require('./components/NavBar.vue'));
 

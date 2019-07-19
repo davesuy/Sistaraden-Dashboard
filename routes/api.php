@@ -17,4 +17,18 @@ use Illuminate\Http\Request;
     return $request->user();
 });*/
 
-Route::post('vue', 'TestingVueController@index');
+Route::get('vue', 'TestingVueController@index');
+
+
+
+// Crm Accounts
+
+Route::get('accounts', 'Backend\Crm\AccountController@getAccounts');
+
+Route::get('activelists', 'Backend\Crm\ActiveListController@getActiveLists');
+
+Route::get('campaigns', 'Backend\Crm\CampaignController@getCampaigns');
+
+Route::get('clients', 'Backend\Crm\ClientController@getClients');
+
+Route::get('emails', 'Backend\Crm\EmailController@getEmails');

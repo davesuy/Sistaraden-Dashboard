@@ -1,15 +1,13 @@
 <template>
     <div>
 <!--        <h1> Component Account</h1> -->
-
+<!--   {{accounts}} -->
        <table class="table">
           <thead class="thead-dark">
             <tr>
                <th scope="col">#</th>
               <th scope="col">Account ID</th>
               <th scope="col">Account Name</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
             </tr>
           </thead>
 
@@ -18,26 +16,35 @@
                <th scope="row">{{ index + num}} </th>
               <th scope="row">{{ account.id }} </th>
               <td>{{account.accountName}}</td>
-              <td>Otto</td>
-              <td>@mdo</td>
             </tr>
       
           </tbody>
         </table>
 
-         <!--     Loop through the pages array to display each page number       -->
-         <div class="sistaraden-pagination-con text-center mt-5">
+   <!--      <div class="sistaraden-pagination-con text-center mt-5 pt-5">
+
           <div class="clearfix btn-group">
+
             <button type="button" class="btn btn-sm btn-outline-secondary" v-if="page != 1" @click="page--"> << </button>
+
             <button v-bind:class="{'active' : (page == pageNumber) }" type="button" class="btn btn-sm btn-outline-secondary" v-for="pageNumber in pages.slice(page-1, page+5)" @click="page = pageNumber"> {{pageNumber}} </button>
 
             <button type="button" @click="page++" v-if="page < pages.length" class="btn btn-sm btn-outline-secondary"> >> </button>
+
           </div>
-           </div>
+
+        </div> -->
+<!-- 
+    {{page}} -->
+        <pagination :pages_slice="pages" :page_slice="page"  :per_page_slice="perPage" v-on:pageChanged="updatePage($event)" v-on:pageChangedNext="updatePageNext($event)" v-on:pageChangedPrev="updatePagePrev($event)"></pagination>
     </div>
 </template>
 
 <script>
+
+    import Pagination from '../includes/partials/Pagination.vue';
+
+    import displayPaginateMixin from '../../mixins/displayPaginateMixin.js';
 
     export default {
 
@@ -57,6 +64,11 @@
             }
 
         },
+        components: {
+
+            'pagination': Pagination,
+
+        },
         created() {
 
             this.fetchAccount();
@@ -69,13 +81,7 @@
 
                 let vm = this;
 
-                fetch(this.sharpspringConnect, {
-                    method: 'post',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify({"method":"getAccounts","params":{"where":[],"limit":100,"offset":0},"id":5})
-                })
+                fetch('/api/accounts')
                 .then(res => res.json())
                 .then(data => {
 
@@ -89,7 +95,6 @@
                 //     method: "post",
                 //     url: this.sharpspringConnect,
                 //     headers: {
-                //         //'Access-Control-Allow-Origin': 'http://dashboard.sistaraden.com/',
                 //         'Content-Type': 'application/json'
                 //     },
                 //     data: {"method":"getAccounts","params":{"where":[],"limit":100,"offset":0},"id":5}
@@ -102,42 +107,24 @@
                 // .catch(response => {
                 //     console.log(response);
                 // });
+            },      
+            updatePage: function(updatedPage) {
+              this.page = updatedPage;
             },
-            setPages () {
-
-              let numberOfPages = Math.ceil(this.accounts.length / this.perPage);
-
-
-              for (let index = 1; index <= numberOfPages; index++) {
-
-                this.pages.push(index);
-
-
-              }
-
+            updatePageNext: function(updatedPage) {
+              this.page = updatedPage;
             },
-            paginate (accounts) {
-
-              let page = this.page;
-              let perPage = this.perPage;
-              let from = (page * perPage) - perPage;
-              let to = (page * perPage);
-
-              let per_page = perPage - 1;
-           
-           
-              //console.log(page + '-' + perPage + '-' + from + '-' + to);
-              this.num = to - per_page;
-              return accounts.slice(from, to);
-
+            updatePagePrev: function(updatedPage) {
+              this.page = updatedPage;
             }
+          
 
         },
         watch: {
 
           accounts () {
 
-            this.setPages();
+            this.setPages(this.accounts);
 
           }
 
@@ -150,7 +137,9 @@
 
           }
 
-        }
+        },
+        mixins: [displayPaginateMixin],
+        
   
 
     }

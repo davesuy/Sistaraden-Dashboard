@@ -9,7 +9,7 @@ use App\Sharpspring;
 /**
  * Class DocumentationController.
  */
-class AccountController extends Controller
+class EmailController extends Controller
 {
 
     /**
@@ -20,13 +20,13 @@ class AccountController extends Controller
 
     	//return $this->getAccounts();
     	
-        return view('backend.pages.crm.account');
+        return view('backend.pages.crm.email');
     }
 
-    public function getAccounts() {
+    public function getEmails() {
 
 
-		$method = "getAccounts";
+		$method = "getEmailListing";
 		$params = array('where' => array(), 'limit' => 500, 'offset' => 0);
 	     
 

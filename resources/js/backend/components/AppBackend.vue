@@ -7,14 +7,17 @@
 
 <script>
 
+    import Variable from '../mixins/variable.js';
     import Account from './pages/account.vue';
-    import variable from '../mixins/variable.js';
+   
+
 
     export default {
 
         components: {
 
             'account': Account,
+         
 
         },
 

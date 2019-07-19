@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title', app_name() . ' | ' . __('strings.backend.dashboard.title'))
-@section('page-header', 'Accounts')
+@section('page-header', 'Campaigns')
 
 @section('content')
     <div class="container">
@@ -10,7 +10,7 @@
             <div class="col-xl-12">
                 <section class="hk-sec-wrapper">
 
-                    <account></account>
+                      <campaign></campaign>
                     
                 </section>
             </div>

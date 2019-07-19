@@ -7,6 +7,10 @@ use App\Http\Controllers\Backend\TicketController;
 use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\DocumentationController;
 use App\Http\Controllers\Backend\Crm\AccountController;
+use App\Http\Controllers\Backend\Crm\ActiveListController;
+use App\Http\Controllers\Backend\Crm\CampaignController;
+use App\Http\Controllers\Backend\Crm\ClientController;
+use App\Http\Controllers\Backend\Crm\EmailController;
 
 // All route names are prefixed with 'admin.'.
 Route::get('/', [DashboardController::class, 'index'])->name('index');
@@ -20,5 +24,12 @@ Route::get('documentation', [DocumentationController::class, 'index'])->name('do
 // CRM
 
 Route::group(['namespace' => 'Crm', 'prefix' => 'crm', 'as' => 'crm.', 'middleware' => 'admin'], function () {
-	Route::get('account', [AccountController::class, 'index'])->name('account');
+
+	Route::get('accounts', [AccountController::class, 'index'])->name('accounts');
+	Route::get('activelists', [ActiveListController::class, 'index'])->name('activelists');
+	Route::get('campaigns', [CampaignController::class, 'index'])->name('campaigns');
+	Route::get('clients', [ClientController::class, 'index'])->name('clients');
+	Route::get('emails', [EmailController::class, 'index'])->name('emails');
+
+
 });

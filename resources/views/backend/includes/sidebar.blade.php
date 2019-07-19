@@ -62,34 +62,31 @@
                         <li class="nav-item">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.crm.account') }}">Account</a>
+                                    <a class="nav-link" href="{{ route('admin.crm.accounts') }}">Accounts</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">Active List Member</a>
+                                    <a class="nav-link" href="{{ route('admin.crm.activelists') }}">Active List Members</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">Campaign</a>
+                                    <a class="nav-link" href="{{ route('admin.crm.campaigns') }}">Campaigns</a>
                                 </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">Client</a>
-                                </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">Email</a>
+                                    <a class="nav-link" href="{{ route('admin.crm.clients') }}">Clients</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">Email Listing</a>
+                                    <a class="nav-link" href="{{ route('admin.crm.emails') }}">Email Listings</a>
                                 </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">Event</a>
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">Events</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">Lead</a>
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">Leads</a>
                                 </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">List</a>
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">Lists</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.faq') }}">List Member</a>
+                                    <a class="nav-link" href="{{ route('admin.faq') }}">List Members</a>
                                 </li>
                             </ul>
                         </li>
