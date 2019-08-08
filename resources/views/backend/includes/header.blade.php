@@ -20,17 +20,26 @@
                         <span class="badge badge-success badge-indicator"></span>
                     </div>
                     <div class="media-body">
-                        <span>Washtec<i class="zmdi zmdi-chevron-down"></i></span>
+                      {{--   <span>Washtec<i class="zmdi zmdi-chevron-down"></i></span> --}}
+                          <span>Washtec</span>
                     </div>
                 </div>
             </a>
             <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX"
                 data-dropdown-out="flipOutX">
 
-                <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log
-                        out</span></a>
+                {{-- <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log
+                        out</span></a> --}}
+
+                    <a class="dropdown-item" href="{{ route('frontend.auth.logout') }}">
+                        <i class="fas fa-lock"></i> @lang('navs.general.logout')
+                    </a>
             </div>
         </li>
+
+          <a class="dropdown-item" href="{{ route('frontend.auth.logout') }}">
+                <i class="fas fa-lock"></i> @lang('navs.general.logout')
+            </a>
     </ul>
 </nav>
 <form role="search" class="navbar-search">
