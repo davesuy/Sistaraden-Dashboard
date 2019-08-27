@@ -31,7 +31,7 @@
 
         <div id="app">
             <div class="hk-wrapper">
-                @include('includes.partials.messages')
+             
                 <!-- Main Content -->
         <div class="hk-pg-wrapper hk-auth-wrapper">
             <header class="d-flex justify-content-between align-items-center">
@@ -41,6 +41,14 @@
                 <div class="btn-group btn-group-sm">
                     <a href="#" class="btn btn-outline-secondary">Help</a>
                     <a href="#" class="btn btn-outline-secondary">About Us</a>
+                    @guest
+    
+
+                        @if(config('access.registration'))
+                              <a  class="btn btn-outline-secondary" href="{{route('frontend.auth.register')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.auth.register')) }}">@lang('navs.frontend.register')</a>
+                        @endif
+             
+                    @endguest
                 </div>
             </header>
             <div class="container-fluid">
@@ -70,6 +78,8 @@
                     <div class="col-xl-7 pa-0">
                         <div class="auth-form-wrap py-xl-0 py-50">
                             <div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-xs-100">
+
+                                   @include('includes.partials.messages')
                                 <div class="card">
                 <div class="card-header">
                     <strong>

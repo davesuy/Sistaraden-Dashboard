@@ -15,7 +15,7 @@
                         <li class="nav-item">
                             <ul class="nav flex-column">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="{{ route('admin.index') }}">Welcome</a>
+                                    <a class="nav-link" href="{{ route('admin.dashboard') }}">Welcome</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link collapsed" href="javascript:void(0);"
@@ -128,6 +128,73 @@
                         </li>
                     </ul>
                 </li>
+
+                @if ($logged_in_user->isAdmin())
+                <li class="nav-item nav-dropdown {{
+                    active_class(Active::checkUriPattern('admin/auth*'), 'open')
+                }}">
+                    <a class="nav-link" href="javascript:void(0);" data-toggle="collapse"
+                        data-target="#pages_drp_access">
+                        <i class="nav-icon far fa-user"></i>
+                        @lang('menus.backend.access.title')
+
+                        @if ($pending_approval > 0)
+                            <span class="badge badge-danger">{{ $pending_approval }}</span>
+                        @endif
+                    </a>
+
+
+                    <ul id="pages_drp_access" class="nav flex-column collapse collapse-level-1">
+                        <li class="nav-item">
+                            <a class="nav-link {{
+                                active_class(Active::checkUriPattern('admin/auth/user*'))
+                            }}" href="{{ route('admin.auth.user.index') }}">
+                                @lang('labels.backend.access.users.management')
+
+                                @if ($pending_approval > 0)
+                                    <span class="badge badge-danger">{{ $pending_approval }}</span>
+                                @endif
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{
+                                active_class(Active::checkUriPattern('admin/auth/role*'))
+                            }}" href="{{ route('admin.auth.role.index') }}">
+                                @lang('labels.backend.access.roles.management')
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="divider"></li>
+
+                <li class="nav-item nav-dropdown {{
+                    active_class(Active::checkUriPattern('admin/log-viewer*'), 'open')
+                }}">
+                        <a class="nav-link nav-dropdown-toggle {{
+                            active_class(Active::checkUriPattern('admin/log-viewer*'))
+                        }}" href="#">
+                        <i class="nav-icon fas fa-list"></i> @lang('menus.backend.log-viewer.main')
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link {{
+                            active_class(Active::checkUriPattern('admin/log-viewer'))
+                        }}" href="{{ route('log-viewer::dashboard') }}">
+                                @lang('menus.backend.log-viewer.dashboard')
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{
+                            active_class(Active::checkUriPattern('admin/log-viewer/logs*'))
+                        }}" href="{{ route('log-viewer::logs.list') }}">
+                                @lang('menus.backend.log-viewer.logs')
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
             </ul>
 
             <hr class="nav-separator">

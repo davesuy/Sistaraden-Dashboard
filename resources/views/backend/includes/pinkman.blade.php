@@ -3,7 +3,7 @@
 
    <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/vendors/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('js/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+ {{--    <script src="{{ asset('js/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script> --}}
 
     <!-- Slimscroll JavaScript -->
     <script src="{{ asset('js/pinkman/jquery.slimscroll.js') }}"></script>

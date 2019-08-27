@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
     <a id="navbar_toggle_btn" class="navbar-toggle-btn nav-link-hover" href="javascript:void(0);"><i
             class="ion ion-ios-menu"></i></a>
-    <a class="navbar-brand" href="{{ route('admin.index') }}">
+    <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
         <img class="brand-img d-inline-block"
             src="{{ asset('img/backend/brand/LOGO-dark-768x274.png') }}" style="width:100px;"
             alt="brand" />
@@ -28,7 +28,7 @@
             <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX"
                 data-dropdown-out="flipOutX">
 
-                {{-- <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log
+            {{--     <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log
                         out</span></a> --}}
 
                     <a class="dropdown-item" href="{{ route('frontend.auth.logout') }}">
@@ -37,9 +37,9 @@
             </div>
         </li>
 
-          <a class="dropdown-item" href="{{ route('frontend.auth.logout') }}">
+        {{--   <a class="dropdown-item" href="{{ route('frontend.auth.logout') }}">
                 <i class="fas fa-lock"></i> @lang('navs.general.logout')
-            </a>
+            </a> --}}
     </ul>
 </nav>
 <form role="search" class="navbar-search">
