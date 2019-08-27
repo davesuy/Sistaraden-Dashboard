@@ -41,6 +41,7 @@
                 <div class="btn-group btn-group-sm">
                     <a href="#" class="btn btn-outline-secondary">Help</a>
                     <a href="#" class="btn btn-outline-secondary">About Us</a>
+                    
                     @guest
     
                         @if(config('access.registration'))
