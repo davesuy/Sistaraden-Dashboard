@@ -43,7 +43,6 @@
                     <a href="#" class="btn btn-outline-secondary">About Us</a>
                     @guest
     
-
                         @if(config('access.registration'))
                               <a  class="btn btn-outline-secondary" href="{{route('frontend.auth.register')}}" class="nav-link {{ active_class(Active::checkRoute('frontend.auth.register')) }}">@lang('navs.frontend.register')</a>
                         @endif
