@@ -32,7 +32,7 @@
         <div id="app">
             <div class="hk-wrapper">
              
-                <!-- Main Content -->
+        <!-- Main Content -->
         <div class="hk-pg-wrapper hk-auth-wrapper">
             <header class="d-flex justify-content-between align-items-center">
                 <a href="{{ route('frontend.index') }}" class="navbar-brand">
