@@ -1,5 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-    <a href="{{ route('frontend.index') }}" class="navbar-brand">
+    <a href="
+     @guest
+        {{ route('frontend.index') }}
+
+    @else
+         {{ route('frontend.user.dashboard') }}
+    @endguest
+
+    " class="navbar-brand">
         <img class="brand-img d-inline-block" src="{{ asset('img/frontend/brand/LOGO-dark-768x274.png') }}" style="width:100px;" alt="brand" />
     </a>
 
