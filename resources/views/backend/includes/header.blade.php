@@ -30,7 +30,7 @@
 
             {{--     <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log
                         out</span></a> --}}
-
+                    <a href="{{ route('frontend.user.account') }}" class="dropdown-item {{ active_class(Active::checkRoute('frontend.user.account')) }}">@lang('navs.frontend.user.account')</a>
                     <a class="dropdown-item" href="{{ route('frontend.auth.logout') }}">
                         <i class="fas fa-lock"></i> @lang('navs.general.logout')
                     </a>

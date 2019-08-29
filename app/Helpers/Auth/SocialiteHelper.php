@@ -26,7 +26,24 @@ class SocialiteHelper
         }
 
         if (config('services.google.active')) {
-            $socialite_enable[] = "<a href='".route('frontend.auth.social.login', 'google')."' class='btn btn-sm btn-outline-info m-1'><i class='fab fa-google'></i>  ".__('labels.frontend.auth.login_with', ['social_media' => 'Google']).'</a>';
+
+            $link_g = route('frontend.auth.social.login', 'google');
+            $name_g = "SignIn";
+            $width_g = "width=600,height=400";
+
+     
+
+              // $socialite_enable[] = '<a target="popup"  onclick="window.open(\'' . $link_g . '\', \'' . $name_g . '\', \'' . $width_g . '\')" href="'.route('frontend.auth.social.login', 'google').'"  class="btn btn-sm btn-outline-info m-1">
+
+             
+                 $socialite_enable[] = '<a  href="'.route('frontend.auth.social.login', 'google').'"  class="btn btn-sm btn-outline-info m-1">
+
+            <i class="fab fa-google"></i>  '
+
+            .__('labels.frontend.auth.login_with', ['social_media' => 'Google'])
+
+            .'</a>';
+
         }
 
         if (config('services.github.active')) {
@@ -34,7 +51,20 @@ class SocialiteHelper
         }
 
         if (config('services.linkedin.active')) {
-            $socialite_enable[] = "<a href='".route('frontend.auth.social.login', 'linkedin')."' class='btn btn-sm btn-outline-info m-1'><i class='fab fa-linkedin'></i>  ".__('labels.frontend.auth.login_with', ['social_media' => 'LinkedIn']).'</a>';
+
+            $link_li = route('frontend.auth.social.login', 'linkedin');
+            $name_li = "name";
+            $width_li = "width=600,height=400";
+
+            // $socialite_enable[] = '<a target="popup"  onclick="window.open(\'' . $link_li . '\', \'' . $name_li . '\', \'' . $width_li . '\')" href="'.route('frontend.auth.social.login', 'linkedin').'"  class="btn btn-sm btn-outline-info m-1">
+
+               $socialite_enable[] = '<a  href="'.route('frontend.auth.social.login', 'linkedin').'"  class="btn btn-sm btn-outline-info m-1">
+
+            <i class="fab fa-linkedin"></i>  '
+
+            .__('labels.frontend.auth.login_with', ['social_media' => 'LinkedIn'])
+
+            .'</a>';
         }
 
         if (config('services.twitter.active')) {
